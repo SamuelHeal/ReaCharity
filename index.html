@@ -15,9 +15,9 @@
 <!-- search: form with dropdown box, causes as options -->
     <div class="row">
         <div class="input-group col">
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Cause">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select</button>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -28,19 +28,24 @@
           </div>
 
           <div class="input-group col">
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="State">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div role="separator" class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select</button>
+              <ul class="dropdown-menu">
+               <li value="Operates_in_ACT"><a class="dropdown-item"  href="#">ACT</a></li> 
+                <li value="Operates_in_NSW"><a class="dropdown-item"  href="#">NSW</a></li>
+                <li value="Operates_in_NT"><a class="dropdown-item"  href="#">NT</a></li>
+                <li value="Operates_in_QLD"><a class="dropdown-item"  href="#">QLD</a></li>
+                <li value="Operates_in_SA"><a class="dropdown-item"  href="#">SA</a></li>
+                <li value="Operates_in_TAS"><a class="dropdown-item"  href="#">TAS</a></li>
+                <li value="Operates_in_VIC"><a class="dropdown-item"  href="#">VIC</a></li>
+                <li value="Operates_in_WA"><a class="dropdown-item"  href="#">WA</a></li>
+              </ul>
             </div>
           </div>
     </div>
+
+
 <!--  -->
     <div></div>
 <!-- results -->
