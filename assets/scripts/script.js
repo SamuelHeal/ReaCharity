@@ -20,13 +20,39 @@ function filterApiData(stateFilter, causeFilter) {
     return charityData.filter(arrayFilter);
 }
 
+function generateAddress(charity) {
+
+    var address = "";
+
+    if (charity.Address_Line_1 !== "") {
+        address = address + charity.Address_Line_1;
+    }
+    if (charity.Address_Line_2 !== "") {
+        address = address+ ", " +charity.Address_Line_2;
+    }
+    if (charity.Address_Line_3 !== "") {
+        address = address+ ", " +charity.Address_Line_3;
+    }
+    if (charity.Town_City !== "") {
+        address = address+ ", " +charity.Town_City;
+    }
+    if (charity.State !== "") {
+        address = address+ ", " +charity.State;
+    }
+    if (charity.Postcode !== "") {
+        address = address+ ", " +charity.Postcode;
+    }
+
+    return address;
+}
+
 function resultBoxGenerator(filteredData) {
 
     filteredData.forEach(charity => {
         //Create container for charity data
         var containerDiv = document.createElement('div');
         containerDiv.id = charity._id;
-        
+
         //Charity name
         var nameHeader = document.createElement('h1');
         var nameText = document.createTextNode(charity.Charity_Legal_Name);
@@ -49,7 +75,7 @@ function resultBoxGenerator(filteredData) {
         
         //Charity address
         var addressAnchor = document.createElement('a');
-        var appendedAddress = charity.Address_Line_1+", "+charity.Address_Line_2+", "+charity.Address_Line_3+", "+charity.Town_City+ ", " + charity.State+ ", "+ charity.Postcode+ ", "+ charity.Country;
+        var appendedAddress = generateAddress(charity);
         var addressText = document.createTextNode(appendedAddress);
         addressAnchor.appendChild(addressText);
 
