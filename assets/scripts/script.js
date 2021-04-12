@@ -78,6 +78,12 @@ function resultBoxGenerator(filteredData) {
         var appendedAddress = generateAddress(charity);
         var addressText = document.createTextNode(appendedAddress);
         addressAnchor.appendChild(addressText);
+        //Creates link for map
+        var mapButton = document.createElement("a")
+        var buttonText = document.createTextNode("Open Maps")
+        mapButton.appendChild(buttonText)
+        mapButton.href = getMapData(appendedAddress)
+        // mapButton.classList.add("mapButtonStyle")
 
         containerDiv.appendChild(addressAnchor);
 
@@ -88,3 +94,33 @@ function resultBoxGenerator(filteredData) {
 }
 
 queryApiData();
+
+function getMapData(address){
+    var lat = ''
+    var lon = ''
+    var addressNew = address
+    
+    if (!address){
+        return null
+    }
+    else if (address === undefined){
+        return null
+    }
+    else{
+        $.ajax({
+            async: false,
+            url: 'http://api.positionstack.com/v1/forward',
+            data: {
+              access_key: '735b3d1ca9c3f414da885ec709acec4f',
+              query: addressNew,
+              limit: 1
+            }
+          }).done(function(data) {
+            results = data
+            lat = results.data[0].latitude
+            lon = results.data[0].longitude
+          });
+    }
+      var addressNew = 'https://www.google.com/maps/place/' + lat + ',' + lon
+      return addressNew
+}
