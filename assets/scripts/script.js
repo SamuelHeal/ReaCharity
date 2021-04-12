@@ -9,4 +9,15 @@ function queryApiData() {
     });
 }
 
+function filterApiData(stateFilter, causeFilter) {
+    if (!charityData)
+        return null;
+    
+    function arrayFilter(charity) {
+        return (charity[stateFilter] === "Y" && charity[causeFilter] === "Y");
+    }
+
+    return charityData.filter(arrayFilter);
+}
+
 queryApiData();
