@@ -79,14 +79,22 @@ function resultBoxGenerator(filteredData) {
         var addressText = document.createTextNode(appendedAddress);
         addressAnchor.appendChild(addressText);
         //Creates link for map
-        var mapButton = document.createElement("a")
-        var buttonText = document.createTextNode("Open Maps")
-        mapButton.appendChild(buttonText)
-        mapButton.href = getMapData(appendedAddress)
+        var mapData = getMapData(appendedAddress)
+
+        if (mapData !== null){
+            var mapButton = document.createElement("a")
+            var buttonText = document.createTextNode("Open Maps")
+            mapButton.appendChild(buttonText)
+            mapButton.target = "_blank";
+            mapButton.href = getMapData(appendedAddress)
+            containerDiv.appendChild(mapButton)
+            
+        }
+        
         // mapButton.classList.add("mapButtonStyle")
 
         containerDiv.appendChild(addressAnchor);
-        containerDiv.appendChild(mapButton)
+        
 
         // Attach charity to body
         var body = document.body;
@@ -125,3 +133,5 @@ function getMapData(address){
     }
 
 }
+
+
