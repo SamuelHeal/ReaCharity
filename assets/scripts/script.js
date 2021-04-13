@@ -86,6 +86,7 @@ function resultBoxGenerator(filteredData) {
         // mapButton.classList.add("mapButtonStyle")
 
         containerDiv.appendChild(addressAnchor);
+        containerDiv.appendChild(mapButton)
 
         // Attach charity to body
         var body = document.body;
@@ -95,11 +96,13 @@ function resultBoxGenerator(filteredData) {
 
 queryApiData();
 
+
 function getMapData(address){
+    var addressURL = encodeURIComponent(address)
+    var newUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + addressURL + '.json?access_token=pk.eyJ1IjoiZHJoZWFsIiwiYSI6ImNrbmZtdDhrMzFybTAydm9vYjh0ZHdmd2UifQ.xMSHVvkXrHSV-sO58EoFzg'
     var lat = ''
     var lon = ''
-    var addressNew = address
-    
+
     if (!address){
         return null
     }
@@ -109,18 +112,16 @@ function getMapData(address){
     else{
         $.ajax({
             async: false,
-            url: 'http://api.positionstack.com/v1/forward',
-            data: {
-              access_key: '735b3d1ca9c3f414da885ec709acec4f',
-              query: addressNew,
-              limit: 1
-            }
-          }).done(function(data) {
+            url: newUrl,
+            
+            }).done(function(data) {
             results = data
-            lat = results.data[0].latitude
-            lon = results.data[0].longitude
-          });
+            lat = data.features[0].geometry.coordinates[1]
+            lon = data.features[0].geometry.coordinates[0]
+
+            });
+    var addressNew = 'https://www.google.com/maps/place/' + lat + ',' + lon
+    return(addressNew)
     }
-      var addressNew = 'https://www.google.com/maps/place/' + lat + ',' + lon
-      return addressNew
+
 }
