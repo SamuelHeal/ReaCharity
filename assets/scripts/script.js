@@ -78,8 +78,23 @@ function resultBoxGenerator(filteredData) {
         var appendedAddress = generateAddress(charity);
         var addressText = document.createTextNode(appendedAddress);
         addressAnchor.appendChild(addressText);
+        //Creates link for map
+        var mapData = getMapData(appendedAddress)
+
+        if (mapData !== null){
+            var mapButton = document.createElement("a")
+            var buttonText = document.createTextNode("Open Maps")
+            mapButton.appendChild(buttonText)
+            mapButton.target = "_blank";
+            mapButton.href = getMapData(appendedAddress)
+            containerDiv.appendChild(mapButton)
+            
+        }
+        
+        // mapButton.classList.add("mapButtonStyle")
 
         containerDiv.appendChild(addressAnchor);
+        
 
         // Attach charity to body
         var body = document.body;
@@ -88,3 +103,35 @@ function resultBoxGenerator(filteredData) {
 }
 
 queryApiData();
+
+
+function getMapData(address){
+    var addressURL = encodeURIComponent(address)
+    var newUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + addressURL + '.json?access_token=pk.eyJ1IjoiZHJoZWFsIiwiYSI6ImNrbmZtdDhrMzFybTAydm9vYjh0ZHdmd2UifQ.xMSHVvkXrHSV-sO58EoFzg'
+    var lat = ''
+    var lon = ''
+
+    if (!address){
+        return null
+    }
+    else if (address === undefined){
+        return null
+    }
+    else{
+        $.ajax({
+            async: false,
+            url: newUrl,
+            
+            }).done(function(data) {
+            results = data
+            lat = data.features[0].geometry.coordinates[1]
+            lon = data.features[0].geometry.coordinates[0]
+
+            });
+    var addressNew = 'https://www.google.com/maps/place/' + lat + ',' + lon
+    return(addressNew)
+    }
+
+}
+
+
