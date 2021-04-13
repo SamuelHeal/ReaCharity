@@ -16,7 +16,6 @@ function filterApiData(stateFilter, causeFilter) {
     function arrayFilter(charity) {
         return (charity[stateFilter] === "Y" && charity[causeFilter] === "Y");
     }
-
     return charityData.filter(arrayFilter);
 }
 
@@ -42,11 +41,14 @@ function generateAddress(charity) {
     if (charity.Postcode !== "") {
         address = address+ ", " +charity.Postcode;
     }
-
     return address;
 }
-
 function resultBoxGenerator(filteredData) {
+
+    var searchResults = document.getElementById("searchResults");
+    while (searchResults.firstChild) {
+        searchResults.removeChild(searchResults.firstChild);
+    }
 
     filteredData.forEach(charity => {
         //Create container for charity data
@@ -87,23 +89,17 @@ function resultBoxGenerator(filteredData) {
             mapButton.appendChild(buttonText)
             mapButton.target = "_blank";
             mapButton.href = getMapData(appendedAddress)
-            containerDiv.appendChild(mapButton)
-            
+            containerDiv.appendChild(mapButton) 
         }
-        
-        // mapButton.classList.add("mapButtonStyle")
-
         containerDiv.appendChild(addressAnchor);
-        
 
         // Attach charity to body
-        var body = document.body;
-        body.insertBefore(containerDiv,body.firstChild)
+        
+        searchResults.appendChild(containerDiv);
     });
 }
 
 queryApiData();
-
 
 function getMapData(address){
     var addressURL = encodeURIComponent(address)
@@ -131,7 +127,12 @@ function getMapData(address){
     var addressNew = 'https://www.google.com/maps/place/' + lat + ',' + lon
     return(addressNew)
     }
-
 }
 
+document.getElementById("searchBtn").addEventListener("click", function() {
 
+    console.log(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
+
+    resultBoxGenerator(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
+
+});
