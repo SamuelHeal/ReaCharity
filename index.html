@@ -15,111 +15,138 @@
 <body>
 
     <!-- banner -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="">Search</a></li>
-                <li><a href="bookmarks.html">Bookmarks</a></li>
-            </ul>
-        </nav>
-        <div class="banner"></div>
-    </header>
-
-    <div id="slideshow">
-        <ul class="bxslider">
-           <li>
-             <img src="assets/designs/charity1.jpg" alt="Picture1">
-           </li>
-   
-           <li>
-             <img src="assets/designs/charity2.jpg" alt="Picture2">
-           </li>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <img src="assets/designs/logo.png" width="100" height="100" alt="">
+        </a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bookmarks</a>
+          </li>
         </ul>
-   </div>
+    </nav>
 
-
-    <!-- search: form with dropdown box, causes as options -->
-    <div class="container beginSearch"> 
-        <div class="row">   
-            <div class="col-6"> 
-                <div class="input-group">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Cause">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select</button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" value="Preventing_or_relieving_suffering_of_animals" href="#">Animals</a></li>
-                            <li><a class="dropdown-item" value="Advancing_Culture" href="#">Culture</a></li>
-                            <li><a class="dropdown-item" value="Advancing_Education" href="#">Education</a></li>
-                            <li><a class="dropdown-item" value="Advancing_Health" href="#">Health</a></li>
-                            <li><a class="dropdown-item" value="Promote_or_oppose_a_change_to_law__government_poll_or_prac" href="#">Changing of laws</a></li>
-                            <li><a class="dropdown-item" value="Advancing_natual_environment" href="#">Environment</a></li>
-                            <li><a class="dropdown-item" value="Promoting_or_protecting_human_rights" href="#">Human rights</a></li>
-                            <li><a class="dropdown-item" value="Purposes_beneficial_to_ther_general_public_and_other_analogous" href="#">Miscelaneous</a></li>
-                            <li><a class="dropdown-item" value="Promoting_reconciliation__mutual_respect_and_tolerance" href="#">Reconciliation, respect, and tolerance</a></li>
-                            <li><a class="dropdown-item" value="Advancing_Religion" href="#">Religion</a></li>
-                            <li><a class="dropdown-item" value="Advancing_social_or_public_welfare" href="#">Social and public welfare</a></li>
-                            <li><a class="dropdown-item" value="Advancing_security_or_safety_of_Australia_or_Australian_public" href="#">Public security</a></li>
-                            <li><a class="dropdown-item" value="Aboriginal_or_TSI" href="#">Indigenous</a></li>
-                            <li><a class="dropdown-item" value="Adults" href="#">Adults</a></li>
-                            <li><a class="dropdown-item" value="Aged_Persons" href="#">Elderly</a></li>
-                            <li><a class="dropdown-item" value="Children" href="#">Children</a></li>
-                            <li><a class="dropdown-item" value="Communities_Overseas" href="#">Overseas communities</a></li>
-                            <li><a class="dropdown-item" value="Early_Childhood" href="#">Early childhood</a></li>
-                            <li><a class="dropdown-item" value="Ethnic_Groups" href="#">Ethnic groups</a></li>
-                            <li><a class="dropdown-item" value="Families" href="#">Families</a></li>
-                            <li><a class="dropdown-item" value="Females" href="#">Females</a></li>
-                            <li><a class="dropdown-item" value="Financially_Disadvantaged" href="#">Financially disadvantaged</a></li>
-                            <li><a class="dropdown-item" value="Gay_Lesbian_Bisexual" href="#">LGBTQIA</a></li>
-                            <li><a class="dropdown-item" value="General_Community_in_Australia" href="#">Australian community</a></li>
-                            <li><a class="dropdown-item" value="Males" href="#">Males</a></li>
-                            <li><a class="dropdown-item" value="Migrants_Refugees_or_Asylum_Seekers" href="#">Migrants and refugees</a></li>
-                            <li><a class="dropdown-item" value="Other_Beneficiaries" href="#">Other beneficiaries</a></li>
-                            <li><a class="dropdown-item" value="Other_Charities" href="#">Other charities</a></li>
-                            <li><a class="dropdown-item" value="People_at_risk_of_homelessness" href="#">At risk of homelessness</a></li>
-                            <li><a class="dropdown-item" value="People_with_Chronic_Illness" href="#">Chronic illness</a></li>
-                            <li><a class="dropdown-item" value="People_with_Disabilities" href="#">Disabilities</a></li>
-                            <li><a class="dropdown-item" value="Pre_Post_Release_Offenders" href="#">Pre and post release offenders</a></li>
-                            <li><a class="dropdown-item" value="Rural_Regional_Remote_Communities" href="#">Rural and remote communities</a></li>
-                            <li><a class="dropdown-item" value="Unemployed_Person" href="#">Unemployed</a></li>
-                            <li><a class="dropdown-item" value="Veterans_or_their_families" href="#">Veterans</a></li>
-                            <li><a class="dropdown-item" value="Victims_of_crime" href="#">Victims of crime</a></li>
-                            <li><a class="dropdown-item" value="Victims_of_Disasters" href="#">Victims of disasters</a></li>
-                            <li><a class="dropdown-item" value="Youth" href="#">Youth</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <br>
-
-                <div class="input-group">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="State">
-                    <div class="input-group-append" data-toggle="dropdown">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Select</button>
-                        <ul class="dropdown-menu">
-                            <li value="Operates_in_ACT"><a class="dropdown-item"  href="#">ACT</a></li> 
-                            <li value="Operates_in_NSW"><a class="dropdown-item"  href="#">NSW</a></li>
-                            <li value="Operates_in_NT"><a class="dropdown-item"  href="#">NT</a></li>
-                            <li value="Operates_in_QLD"><a class="dropdown-item"  href="#">QLD</a></li>
-                            <li value="Operates_in_SA"><a class="dropdown-item"  href="#">SA</a></li>
-                            <li value="Operates_in_TAS"><a class="dropdown-item"  href="#">TAS</a></li>
-                            <li value="Operates_in_VIC"><a class="dropdown-item"  href="#">VIC</a></li>
-                            <li value="Operates_in_WA"><a class="dropdown-item"  href="#">WA</a></li>
-                        </ul>
-                    </div>
-                </div> 
-
-                <br>
-
-                <div id="searchDiv">
-                    <button type="submit" class="btn btn-dark btn-lg searchBtn" id="searchBtn"><i class="fas fa-search"></i>  Search</button> 
-                </div>
-            </div>
+    <div class="jumbotron">
+        <div id="slideshow">
+            <ul class="bxslider">
+               <li>
+                 <img src="assets/designs/charity1.jpg" alt="Picture1">
+               </li>
+       
+               <li>
+                 <img src="assets/designs/charity2.jpg" alt="Picture2">
+               </li>
+            </ul>
+       </div>
+       <div class="d-flex justify-content-center charitySearch">
+            <p>
+                <button class="btn btn-primary searchButton" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Search Charities
+                </button>
             
-            <div class="col-6">
-                <div id="description" class="description"></div>
+            </p>
+       </div>
+       
+    </div>
+
+    
+    
+    
+    <div class="collapse jumbotron" id="collapseExample">
+        
+        <div class="container beginSearch" > 
+            <h3 class="search-heading" id="searchHeading">Search for your charity</h3>
+            <div class="container beginSearch"> 
+                <div class="row">   
+                    <div class="col-6"> 
+                        <select id="causeDropdown" class="custom-select">
+                            <option selected>Select Cause</option>
+                            <option value="Preventing_or_relieving_suffering_of_animals">Animals</option>
+                            <option value="Advancing_Culture">Culture</option>
+                            <option value="Advancing_Education">Education</option>
+                            <option value="Advancing_Health">Health</option>
+                            <option value="Promote_or_oppose_a_change_to_law__government_poll_or_prac">Changing of laws</option>
+                            <option value="Advancing_natual_environment">Environment</option>
+                            <option value="Promoting_or_protecting_human_rights">Human rights</option>
+                            <option value="Purposes_beneficial_to_ther_general_public_and_other_analogous">Miscellaneous</option>
+                            <option value="Promoting_reconciliation__mutual_respect_and_tolerance">Reconciliation, respect, and tolerance</option>
+                            <option value="Advancing_Religion">Religion</option>
+                            <option value="Advancing_social_or_public_welfare">Social and public welfare</option>
+                            <option value="Advancing_security_or_safety_of_Australia_or_Australian_public">Public security</option>
+                            <option value="Aboriginal_or_TSI">Indigenous and/or Torres Strait Islanders</option>
+                            <option value="Adults">Adults</option>
+                            <option value="Aged_Persons">Elderly</option>
+                            <option value="Children">Children</option>
+                            <option value="Communities_Overseas">Overseas communities</option>
+                            <option value="Early_Childhood">Early Childhood</option>
+                            <option value="Ethnic_Groups">Ethnic Groups</option>
+                            <option value="Families">Families</option>
+                            <option value="Females">Females</option>
+                            <option value="Financially_Disadvantaged">Financially Disadvantaged</option>
+                            <option value="Gay_Lesbian_Bisexual">LGBTQIA</option>
+                            <option value="General_Community_in_Australia">Australian Community</option>
+                            <option value="Males">Males</option>
+                            <option value="Migrants_Refugees_or_Asylum_Seekers">Migrants, Refugees and Asylum Seekers</option>
+                            <option value="Other_Beneficiaries">Other Beneficiaries</option>
+                            <option value="Other_Charities">Other Charities</option>
+                            <option value="People_at_risk_of_homelessness">At Risk of Homelessness</option>
+                            <option value="People_with_Chronic_Illness">Chronic Illness</option>
+                            <option value="People_with_Disabilities">People with Disabilities</option>
+                            <option value="Pre_Post_Release_Offenders">Pre and Post Release Offenders</option>
+                            <option value="Rural_Regional_Remote_Communities">Rural and Remote Communities</option>
+                            <option value="Unemployed_Person">Unemployed Persons</option>
+                            <option value="Veterans_or_their_families">Veterans</option>
+                            <option value="Victims_of_crime">Victims of Crime</option>
+                            <option value="Victims_of_Disasters">Victims of Disasters</option>
+                            <option value="Youth">Youth</option>
+                        </select>
+        
+                        <br>
+                        <select id="stateDropdown" class="custom-select">
+                            <option selected>Select State</option>
+                            <option value="Operates_in_ACT">ACT</option>
+                            <option value="Operates_in_NSW">NSW</option>
+                            <option value="Operates_in_NT">NT</option>
+                            <option value="Operates_in_QLD">QLD</option>
+                            <option value="Operates_in_SA">SA</option>
+                            <option value="Operates_in_TAS">TAS</option>
+                            <option value="Operates_in_VIC">VIC</option>
+                            <option value="Operates_in_WA">WA</option>
+                        </select>
+    
+                    <br>
+    
+                    <div id="searchDiv">
+                        <button type="submit" class="btn btn-dark btn-lg searchBtn" id="searchBtn"><i class="fas fa-search"></i>  Search</button> 
+                    </div>
+                </div>
+                
+                <div class="col-6 card-location">
+                    <div id="description" class="description"></div>
+                    <div class="card" style="width: auto; height: 20rem">
+                        <div class="card-body">
+                          <h5 class="card-title">Charity Facts</h5>
+                          <div class="container animatedCont">
+                              <div class="animate three">
+                                <span class="card-text"></span>
+                                <button class="repeat" href="javascript:void(0);">Next Fact</button>
+                              </div>   
+                            </div>
+                        </div>
+                      </div>
+                </div>
             </div>
         </div>
+        
     </div>
+    <!-- search: form with dropdown box, causes as options -->
+    
 
 <br>
 
@@ -135,11 +162,13 @@
 
     <footer class="footer" id="footer"></footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    <script src="assets/scripts/slideshow.js"></script>
     <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/slideshow.js"></script>
+    
 </body>
 </html>
