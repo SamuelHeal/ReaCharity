@@ -127,6 +127,7 @@ function getMapData(address){
     var addressNew = 'https://www.google.com/maps/place/' + lat + ',' + lon
     return(addressNew)
     }
+
 }
 
 document.getElementById("searchBtn").addEventListener("click", function() {
