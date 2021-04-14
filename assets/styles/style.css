@@ -224,9 +224,16 @@ footer{
 @media screen and (max-width: 1200px){
 
   /* SEARCH RESULTS */
-  /* .responsive-screen{
-    width: max-content !important;
-  } */
+  .bx-wrapper .bx-pager 
+  {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #666;
+    top: -30px;
+    position: relative;
+   }
 
   #searchResults h3{
     font-size: 1.5rem;
