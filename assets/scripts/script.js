@@ -1,3 +1,25 @@
+function renderBookmarks(){
+    var bookmarkContainer = document.querySelector("#bookmark-list");
+    for (let i = 0; i < charities.length; i++) {
+        var bookmarkHeading = document.createElement("h2");
+        bookmarkHeading.textContent= charities[i].name;
+        var bookmarkWebsite = document.createElement("p");
+        bookmarkWebsite.textContent= charities[i].website;
+        var bookmarkAddress = document.createElement("p");
+        bookmarkAddress.textContent= charities[i].address;
+        var deleteBookmark= document.createElement("button");
+        deleteBookmark.textContent="X";
+        deleteBookmark.addEventListener("click", function(){
+            // charities.splice(charities[i]);
+            // charities.filter(function(i){
+            // })
+            // console.log("Fire");
+        charities.filter(item => item !== value) 
+        })
+        bookmarkContainer.append(bookmarkHeading, bookmarkWebsite, bookmarkAddress, deleteBookmark);
+    }
+} renderBookmarks();
+
 var charityData;
 
 function queryApiData() {
