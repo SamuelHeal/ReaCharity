@@ -89,6 +89,113 @@ body{
 }
 
 
+.beginSearch{
+  position: relative;
+  top: 80px;
+  
+}
+
+.card-location{
+  position:relative;
+  left: 50px;
+  top: -140px
+}
+
+.search-heading{
+  position: relative;
+  top: -50px
+}
+
+.charitySearch{
+  position:relative;
+  top: -615px;
+
+
+}
+
+.searchButton{
+  height:64px;
+  font-size: 35px;
+  background-color: rgb(110, 209, 110);
+  color: white;
+  border: none
+}
+
+.searchResults{
+  border-style: solid;
+  border-radius: 3px;
+  margin: 15px;
+}
+
+.three span {
+  color: black;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  animation: sideSlide .5s forwards;
+}
+
+@keyframes sideSlide {
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color: black;
+  }
+
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color: black;
+  }
+
+  90% {
+    transform: translate(0) scale(1.2);
+    color: rgb(88, 196, 88);
+  }
+
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color: black;
+  }
+}
+
+.animate {
+  font-size: 12px;
+  margin: 100px 0 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.animate span {
+  display: inline-block;
+}
+
+.animate span:nth-of-type(2) {
+  animation-delay: .05s;
+}
+.animate span:nth-of-type(3) {
+  animation-delay: .1s;
+}
+
+.repeat{
+  font-size: 30px;
+  border-width: 2px;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(51, 51, 51);
+}
+
+.animatedCont{
+  position: relative;
+  top: -40px
+}
+
+.card-text{
+  font-size: 15px;
+}
+
+.repeat:hover{
+  text-decoration: none;
+ 
+=======
+
 
 
 
@@ -391,4 +498,5 @@ footer{
     background: white;
   
   }
+
 }

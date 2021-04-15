@@ -111,6 +111,8 @@ function resultBoxGenerator(filteredData) {
             mapButton.href = getMapData(appendedAddress);
             containerDiv.appendChild(mapButton);
         }
+        containerDiv.appendChild(addressAnchor);
+        containerDiv.classList.add("searchResults")
         
         // Alternate Bookmark Button
         var bookmarkButton = document.createElement("button");
@@ -123,9 +125,11 @@ function resultBoxGenerator(filteredData) {
         containerDiv.appendChild(bookmarkButton);
         bookmarkButton.appendChild(bookmarkText);
 
+
         // Attach charity to body
         
         searchResults.appendChild(containerDiv);
+        
     });
 }
 
@@ -167,17 +171,43 @@ document.getElementById("searchBtn").addEventListener("click", function() {
 
 });
 
-// BOOKMARK SAVES CURRENT SEARCH INTO ARRAY
-var charities= {
-    name: [],
-    website: [],
-    address: []
-};
+
+var charityFacts = [{
+    fact: "Charities have three primary income sources – government, giving and other income/revenue (which includes income from memberships, sales and investments). Around 1 in 4 charities depend on giving and philanthropy for 50% or more of their total revenue. Smaller charities tend to depend on giving and philanthropy for a higher proportion of their income compared to larger charities."
+},
+{
+    fact: "The most recent comprehensive study into overall giving behaviours was undertaken in 2016. An estimated 14.9 million Australian adults (80.8%) gave in total $12.5 billion to charities and NFP organisations over the 2015-16 financial year. The average donation was $764.08 and the median donation was $200."
+},
+{
+    fact: "For the 8th year running police were the most generous occupation, with 73.42% of individuals giving, followed by Machine Operators and School Principals. The highest average deductions were claimed by CEOs and Managing Directors, followed by Barristers and medical practitioners. (As of 2016-17 data)"
+},
+]
+var factBox = document.querySelector(".card-text")
 
 
-// var searchContainer= document.getElementById("searchResultsContainer");
+function onLoadFact(){
+    factBox.innerHTML = charityFacts[0].fact
+}
 
-// searchContainer.addEventListener('submit', function(event){
-//     event.preventDefault();
-//     console.log("Hi");
-// });
+onLoadFact()
+
+$('.repeat').click(function(){
+    if (factBox.innerHTML === charityFacts[0].fact){
+        factBox.innerHTML = charityFacts[1].fact
+    }
+    else if (factBox.innerHTML === charityFacts[1].fact){
+        factBox.innerHTML = charityFacts[2].fact
+    }
+    else if (factBox.innerHTML === charityFacts[2].fact){
+        factBox.innerHTML = charityFacts[0].fact
+    }
+    var classes =  $(this).parent().attr('class');
+        $(this).parent().attr('class', 'animate');
+        var indicator = $(this);
+        setTimeout(function(){ 
+        $(indicator).parent().addClass(classes);
+        }, 20);
+    });
+
+    
+
