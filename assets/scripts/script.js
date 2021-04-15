@@ -62,6 +62,17 @@ function resultBoxGenerator(filteredData) {
         containerDiv.id = "charity"+charity._id;
         containerDiv.setAttribute("class", "charity-container"); 
 
+        
+
+        // Bookmark
+        var bookmarkIcon = document.createElement("i");
+        bookmarkIcon.id= "bookmarkIcon"+charity._id;
+        bookmarkIcon.setAttribute("class","fas fa-bookmark bookmark-icon");
+
+        containerDiv.appendChild(bookmarkIcon);
+ 
+
+
         //Charity name
         var nameHeader = document.createElement('h3');
         var nameText = document.createTextNode(charity.Charity_Legal_Name);
@@ -106,16 +117,8 @@ function resultBoxGenerator(filteredData) {
             mapButton.href = getMapData(appendedAddress);
             containerDiv.appendChild(mapButton);
         }
-        
-        // Bookmark Button
 
-            var bookmarkButton = document.createElement("button");
-            var bookmarkText = document.createTextNode("Bookmark");
-            bookmarkButton.id = "bookmarkButton"+charity._id;
-            bookmarkButton.setAttribute("class", "bookmark-button");
-            bookmarkButton.setAttribute("type","button");
-            containerDiv.appendChild(bookmarkButton);
-            bookmarkButton.appendChild(bookmarkText);          
+             
 
             // BOOKMARKING TO ARRAY
             bookmarkButton.addEventListener("click", function(){
@@ -142,7 +145,29 @@ function resultBoxGenerator(filteredData) {
                         
                   containerDiv.appendChild(bookmarkIcon);
 
-            });
+        // Alternate Bookmark Button
+        var bookmarkButton = document.createElement("button");
+        var bookmarkText = document.createTextNode("Bookmark");
+        bookmarkButton.id = "bookmarkButton"+charity._id;
+        bookmarkButton.setAttribute("class", "bookmark-button");
+        bookmarkButton.setAttribute("type","button");
+        
+
+        containerDiv.appendChild(bookmarkButton);
+        bookmarkButton.appendChild(bookmarkText);
+
+              
+        // Bookmark Button
+
+            var bookmarkButton = document.createElement("button");
+            var bookmarkText = document.createTextNode("Bookmark");
+            bookmarkButton.id = "bookmarkButton"+charity._id;
+            bookmarkButton.setAttribute("class", "bookmark-button");
+            bookmarkButton.setAttribute("type","button");
+            containerDiv.appendChild(bookmarkButton);
+            bookmarkButton.appendChild(bookmarkText);    
+
+         });
 
       
         // Attach charity to body
@@ -190,4 +215,5 @@ document.getElementById("searchBtn").addEventListener("click", function() {
     resultBoxGenerator(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
 
 });
+
 

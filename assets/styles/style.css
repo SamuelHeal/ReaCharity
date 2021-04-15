@@ -1,5 +1,8 @@
-/* SLIDESHOW */
+body{
+  background-color: #fffafa;
+}
 
+/* SLIDESHOW */
 #slideshow{
     margin-bottom: 50px;
 }
@@ -83,4 +86,309 @@
 {
   font-size: 0;
   line-height: 0;
+}
+
+
+
+
+
+
+/* SEARCH RESULTS */
+
+#searchResults h3{
+  font-size: 1.5rem;
+}
+
+#searchResults a{
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.bookmark-icon{
+  position: relative;
+  display: block;
+  float: right;
+  top: -210px;
+  font-size: 30px;
+  color: #ea4848;
+}
+
+.bookmark-icon:visited{
+  position: relative;
+  display: block;
+  float: right;
+  top: -210px;
+  font-size: 30px;
+  color: #ea4848;
+}
+
+.bookmark-icon:hover{
+  position: relative;
+  display: block;
+  float: right;
+  top: -210px;
+  font-size: 30px;
+  color: #ea4848;
+  transform: translateY(3px);
+  transition-duration: .5s;
+}
+
+
+.charity-container{
+  display: block;
+  margin: 10px;
+  min-width: 45%;
+  width: 48%;
+  max-width: 48%;
+  border: 1px #fff solid;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #e2d7d7;
+  background: white;
+
+}
+
+.open-maps:link{
+  display: inline-block;
+  margin: 10px 0;
+  padding: 6px 10px;
+  background-color: #A5C882;
+  border: 1px #A5C882 solid;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+
+.open-maps:visited{
+  display: inline-block;
+  margin: 10px 0;
+  padding: 6px 10px;
+  background-color: #A5C882;
+  border: 1px #A5C882 solid;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.open-maps:hover{
+  display: inline-block;
+  margin: 10px 0;
+  padding: 6px 10px;
+  background-color: #A5C882;
+  border: 1px #A5C882 solid;
+  border-radius: 10px;
+  opacity: 0.8;
+  transition-duration: .5s;
+  text-decoration: none;
+}
+
+/* ALTERNATE BOOKMARK BUTTON */
+
+.bookmark-button{
+  display: inline-block;
+  margin: 10px 0;
+  margin-left: 10px;
+  padding: 6px 10px;
+  background-color: #ea4848;
+  border: 1px #ea4848 solid;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.bookmark-button:hover{
+  display: inline-block;
+  margin: 10px 0;
+  margin-left: 10px;
+  padding: 6px 10px;
+  background-color: #ea4848;
+  border: 1px #ea4848 solid;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition-duration: .5s;
+}
+
+.hide{
+  display: none;
+}
+
+.bookmarkFeedback{
+  font-size: 0.9em;
+  color: #ea4848;
+  position: relative;
+  top: 20px;
+}
+
+
+
+/* FOOTER */
+
+footer{
+  display: block;
+  margin-top: 50px;
+}
+
+
+@media screen and (max-width: 1200px){
+
+  /* SEARCH RESULTS */
+  .bx-wrapper .bx-pager 
+  {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #666;
+    top: -30px;
+    position: relative;
+   }
+
+  #searchResults h3{
+    font-size: 1.5rem;
+  }
+  
+  #searchResults a{
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+  }
+  
+
+  .charity-container{
+    margin: 10px auto;
+    width: 100%;
+    border: 1px #fff solid;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 4px #e2d7d7;
+    background: white;
+  
+  }
+
+  .bookmark-icon{
+    position: relative;
+    display: block;
+    float: right;
+    top: -240px;
+    font-size: 25px;
+    color: #ea4848;
+  }
+  
+  .bookmark-icon:visited{
+    position: relative;
+    display: block;
+    float: right;
+    top: -240px;
+    font-size: 25px;
+    color: #ea4848;
+  }
+  
+  .bookmark-icon:hover{
+    position: relative;
+    display: block;
+    float: right;
+    top: -240px;
+    font-size: 25px;
+    color: #ea4848;
+    transform: translateY(3px);
+    transition-duration: .5s;
+  }
+  
+  
+  .charity-container{
+    display: block;
+    margin: 10px;
+    min-width: 95%;
+    border: 1px #fff solid;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 4px #e2d7d7;
+    background: white;
+  
+  }
+  
+  .open-maps:link{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 6px 10px;
+    background-color: #A5C882;
+    border: 1px #A5C882 solid;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  .open-maps:visited{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 6px 10px;
+    background-color: #A5C882;
+    border: 1px #A5C882 solid;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .open-maps:hover{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 6px 10px;
+    background-color: #A5C882;
+    border: 1px #A5C882 solid;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition-duration: .5s;
+    text-decoration: none;
+  }
+
+  /* ALTERNATE BOOKMARK BUTTON */
+
+  .bookmark-button{
+    display: inline-block;
+    margin: 10px 0;
+    margin-left: 10px;
+    padding: 6px 10px;
+    background-color: #ea4848;
+    border: 1px #ea4848 solid;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .bookmark-button:hover{
+    display: inline-block;
+    margin: 10px 0;
+    margin-left: 10px;
+    padding: 6px 10px;
+    background-color: #ea4848;
+    border: 1px #ea4848 solid;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition-duration: .5s;
+  }
+
+}
+
+@media screen and (min-width: 1201px){
+
+  /* SEARCH RESULTS */
+  .charity-container{
+    display: block;
+    margin: 10px;
+    min-width: 48%;
+    width: 48%;
+    border: 1px #fff solid;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 4px #e2d7d7;
+    background: white;
+  
+  }
 }
