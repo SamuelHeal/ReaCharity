@@ -52,8 +52,22 @@ function generateAddress(charity) {
 function resultBoxGenerator(filteredData) {
 
     var searchResults = document.getElementById("searchResults");
+    console.log("Filtered Data: ",filteredData);
+
     while (searchResults.firstChild) {
         searchResults.removeChild(searchResults.firstChild);
+    }
+
+    if (filteredData.length === 0) {
+        var noResultsDiv = document.createElement('div');
+        noResultsDiv.setAttribute("class", "charity-container"); 
+        var noResultsH3 = document.createElement('h3');
+        var noResultsText = document.createTextNode("We couldn't find any results for that search... Try again");
+        noResultsH3.appendChild(noResultsText);
+
+        noResultsDiv.appendChild(noResultsH3);
+        searchResults.appendChild(noResultsDiv);
+        return;
     }
 
     filteredData.forEach(charity => {
