@@ -92,10 +92,12 @@ function resultBoxGenerator(filteredData) {
             containerDiv.appendChild(mapButton) 
         }
         containerDiv.appendChild(addressAnchor);
+        containerDiv.classList.add("searchResults")
 
         // Attach charity to body
         
         searchResults.appendChild(containerDiv);
+        
     });
 }
 

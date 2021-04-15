@@ -104,20 +104,24 @@
 
 .charitySearch{
   position:relative;
-  top: -551px;
+  top: -615px;
 
 
 }
 
 .searchButton{
-  height:70px;
-  font-size: 40px;
-  background-color: rgb(88, 196, 88);
+  height:64px;
+  font-size: 35px;
+  background-color: rgb(110, 209, 110);
   color: white;
   border: none
 }
 
-
+.searchResults{
+  border-style: solid;
+  border-radius: 3px;
+  margin: 15px;
+}
 
 .three span {
   color: black;
