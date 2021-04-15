@@ -108,7 +108,7 @@ body{
   position: relative;
   display: block;
   float: right;
-  top: -23px;
+  top: -210px;
   font-size: 30px;
   color: #ea4848;
 }
@@ -117,7 +117,7 @@ body{
   position: relative;
   display: block;
   float: right;
-  top: -23px;
+  top: -210px;
   font-size: 30px;
   color: #ea4848;
 }
@@ -126,7 +126,7 @@ body{
   position: relative;
   display: block;
   float: right;
-  top: -23px;
+  top: -210px;
   font-size: 30px;
   color: #ea4848;
   transform: translateY(3px);
@@ -211,6 +211,17 @@ body{
   transition-duration: .5s;
 }
 
+.hide{
+  display: none;
+}
+
+.bookmarkFeedback{
+  font-size: 0.9em;
+  color: #ea4848;
+  position: relative;
+  top: 20px;
+}
+
 
 
 /* FOOTER */
@@ -262,7 +273,7 @@ footer{
     position: relative;
     display: block;
     float: right;
-    top: -10px;
+    top: -240px;
     font-size: 25px;
     color: #ea4848;
   }
@@ -271,7 +282,7 @@ footer{
     position: relative;
     display: block;
     float: right;
-    top: -15px;
+    top: -240px;
     font-size: 25px;
     color: #ea4848;
   }
@@ -280,7 +291,7 @@ footer{
     position: relative;
     display: block;
     float: right;
-    top: -10px;
+    top: -240px;
     font-size: 25px;
     color: #ea4848;
     transform: translateY(3px);
