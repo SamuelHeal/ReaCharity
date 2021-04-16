@@ -121,37 +121,64 @@ function resultBoxGenerator(filteredData) {
         }
         
         // Bookmark Button
-        var bookmarkButton = document.createElement("button");
-        var bookmarkText = document.createTextNode("Bookmark");
-        bookmarkButton.id = "bookmarkButton"+charity._id;
-        bookmarkButton.setAttribute("class", "bookmark-button");
-        bookmarkButton.setAttribute("type","button");
-        containerDiv.appendChild(bookmarkButton);
-        bookmarkButton.appendChild(bookmarkText);          
 
-        // BOOKMARKING TO ARRAY
-        bookmarkButton.addEventListener("click", function(){
-            
-            var cName = charity.Charity_Legal_Name;
-            var cWebsite = charity.Charity_Website;
-            var cAddress = appendedAddress;
+            var bookmarkButton = document.createElement("button");
+            var bookmarkText = document.createTextNode("Bookmark");
+            bookmarkButton.id = "bookmarkButton"+charity._id;
+            bookmarkButton.setAttribute("class", "bookmark-button");
+            bookmarkButton.setAttribute("type","button");
+            containerDiv.appendChild(bookmarkButton);
+            bookmarkButton.appendChild(bookmarkText);          
 
-            charities.push({ name: cName, website: cWebsite, address: cAddress});
+            // BOOKMARKING TO ARRAY
+            bookmarkButton.addEventListener("click", function(){
+               
+                var cName = charity.Charity_Legal_Name;
+                var cWebsite = charity.Charity_Website;
+                var cAddress = appendedAddress;
 
-            console.log(charities);
-            localStorage.setItem("Bookmarks", JSON.stringify(charities));
+                charities.push({ name: cName, website: cWebsite, address: cAddress});
+                charName.push(cName);
 
-            const bookmarkFeedback = document.createElement("p");
-            bookmarkFeedback.textContent= cName+" bookmarked!";
-            bookmarkFeedback.setAttribute("class", "bookmarkFeedback");
-            bookmarkButton.setAttribute("class","hide");
-            containerDiv.appendChild(bookmarkFeedback);
-                    
-            containerDiv.appendChild(bookmarkIcon);
+            // UNIQUE VALUES FOR ARRAY
+                
+                const map = {};
+                const uniqueCharities = [];
 
-        });
+                charities.forEach(el => {
+                    if(!map[JSON.stringify(el)]){
+                       map[JSON.stringify(el)] = true;
+                       uniqueCharities.push(el);
+                 }
+              });
+
+                const getUniqueCharName = (array) => ([...new Set(array)]);
+                const uniqueCharName = getUniqueCharName(charName);
+
+                localStorage.setItem("Bookmarks", JSON.stringify(uniqueCharities));
+                localStorage.setItem("charBookmarks", JSON.stringify(uniqueCharName));
+
+                const bookmarkFeedback = document.createElement("p");
+                bookmarkFeedback.textContent= cName+" bookmarked!";
+                bookmarkFeedback.setAttribute("class", "bookmarkFeedback");
+                bookmarkButton.setAttribute("class","hide");
+                containerDiv.appendChild(bookmarkFeedback);
+
+                //   // Bookmark
+                //   var bookmarkIcon = document.createElement("i");
+                //   bookmarkIcon.id= "bookmarkIcon"+charity._id;
+                //   bookmarkIcon.setAttribute("class","fas fa-bookmark bookmark-icon");
+                        
+                //   containerDiv.appendChild(bookmarkIcon);
+
+            });
+
+      
         // Attach charity to body
         searchResults.appendChild(containerDiv);
+
+       
+
     });
 }
 
