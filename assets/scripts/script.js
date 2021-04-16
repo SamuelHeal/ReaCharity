@@ -209,7 +209,9 @@ function onLoadFact(){
 
 onLoadFact()
 
-$('.repeat').click(function(){
+var interval = setInterval(textChange, 10000)
+
+function textChange(){
     if (factBox.innerHTML === charityFacts[0].fact){
         factBox.innerHTML = charityFacts[1].fact
     }
@@ -219,10 +221,6 @@ $('.repeat').click(function(){
     else if (factBox.innerHTML === charityFacts[2].fact){
         factBox.innerHTML = charityFacts[0].fact
     }
-    var classes =  $(this).parent().attr('class');
-        $(this).parent().attr('class', 'animate');
-        var indicator = $(this);
-        setTimeout(function(){ 
-        $(indicator).parent().addClass(classes);
-        }, 20);
-    });
+
+}
+
