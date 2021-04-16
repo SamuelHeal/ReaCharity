@@ -1,13 +1,15 @@
 // BOOKMARK SAVES CURRENT SEARCH INTO ARRAY
-const charities = JSON.parse[window.localStorage.getItem("Bookmarks")] || [];
+const charities = JSON.parse(localStorage.getItem("Bookmarks")) || [];
+const charName = JSON.parse(localStorage.getItem("charBookmarks")) || [];
 var charityData;
+
 
 function queryApiData() {
     var url = "https://data.gov.au/data/api/3/action/datastore_search?resource_id=eb1e6be4-5b13-4feb-b28e-388bf7c26f93";
     fetch(url)
     .then(data=>{return data.json()})
     .then((res)=>{
-        console.log(res);
+        // console.log(res);
         charityData = res.result.records;
     });
 }
@@ -21,6 +23,7 @@ function filterApiData(stateFilter, causeFilter) {
     }
     return charityData.filter(arrayFilter);
 }
+
 
 function generateAddress(charity) {
 
@@ -214,9 +217,13 @@ function getMapData(address){
 
 document.getElementById("searchBtn").addEventListener("click", function() {
 
+    console.log(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
+
     resultBoxGenerator(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
 
 });
+
+
 
 var charityFacts = [{
     fact: "Charities have three primary income sources – government, giving and other income/revenue (which includes income from memberships, sales and investments). Around 1 in 4 charities depend on giving and philanthropy for 50% or more of their total revenue. Smaller charities tend to depend on giving and philanthropy for a higher proportion of their income compared to larger charities."
@@ -229,6 +236,7 @@ var charityFacts = [{
 },
 ]
 var factBox = document.querySelector(".card-text")
+
 
 function onLoadFact(){
     factBox.innerHTML = charityFacts[0].fact
@@ -253,3 +261,6 @@ $('.repeat').click(function(){
         $(indicator).parent().addClass(classes);
         }, 20);
     });
+
+    
+
