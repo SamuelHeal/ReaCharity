@@ -11,6 +11,7 @@
     <!-- add favicon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
     <title>ReaCharity</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/designs/favicon.png"/>
     <link src="https://img.icons8.com/ios/50/000000/non-profit-organisation.png"/>
 </head>
 <body>
@@ -18,15 +19,11 @@
     <!-- banner -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand">
             <img src="assets/designs/logo.png" width="100" height="100" alt="">
         </a>
-        
         <!-- Links -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Search</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link"  href="bookmarks.html">Bookmarks</a>
           </li>
@@ -45,7 +42,7 @@
                </li>
             </ul>
        </div>
-       <div class="d-flex justify-content-center charitySearch">
+       <div class="d-flex justify-content-center">
             <p>
                 <a href="#searchDiv"><button class="btn btn-primary searchButton" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Search Charities
@@ -56,17 +53,13 @@
        
     </div>
 
-    
-    
-    
+<!-- search: form with dropdown box, causes as options -->
     <div class="collapse jumbotron" id="collapseExample">
-        
         <div class="container beginSearch" > 
-            <h3 class="search-heading" id="searchHeading">Search for your charity</h3>
-            <div class="container beginSearch"> 
-                <div class="row">   
-                    <div class="col-6"> 
-                        <select id="causeDropdown" class="custom-select">
+            <h3 class="search-heading textHeading" id="searchHeading">Search for your charity</h3>
+                <div class="row justify-content-center facts">   
+                    <div class="col"> 
+                        <select id="causeDropdown" class="custom-select searchBtn">
                             <option selected>Select Cause</option>
                             <option value="Preventing_or_relieving_suffering_of_animals">Animals</option>
                             <option value="Advancing_Culture">Culture</option>
@@ -120,34 +113,22 @@
                             <option value="Operates_in_VIC">VIC</option>
                             <option value="Operates_in_WA">WA</option>
                         </select>
-    
-                    <br>
-    
-                    <div id="searchDiv">
-                        <button type="submit" class="btn btn-dark btn-lg searchBtn" id="searchBtn"><i class="fas fa-search"></i>  Search</button> 
+                        <div id="searchDiv">
+                            <button type="submit" class="btn btn-dark btn-lg searchBtn" id="searchBtn"><i class="fas fa-search"></i>  Search</button> 
+                        </div>  
                     </div>
-                </div>
-                
-                <div class="col-6 card-location">
-                    <div id="description" class="description"></div>
-                    <div class="card" style="width: auto; height: 20rem">
-                        <div class="card-body">
-                          <h5 class="card-title">Charity Facts</h5>
-                          <div class="container animatedCont">
-                              <div class="animate three">
-                                <span class="card-text"></span>
-                                <button class="repeat" href="javascript:void(0);">Next Fact</button>
-                              </div>   
-                            </div>
-                        </div>
-                      </div>
-                </div>
+                    <div class="col-7 factBox">
+                          <div class="jumbotron background">
+                              <h2 class="textHeading">Charity Facts</h3>
+                              <div>
+                                  <span class="card-text"></span>
+                              </div>
+                          </div>
+                    </div>
+                </div> 
             </div>
-        </div>
-        
+        </div>    
     </div>
-    <!-- search: form with dropdown box, causes as options -->
-    
 
     <br />
 
@@ -160,9 +141,6 @@
     </div>
     <button onclick="topFunction()" id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
-    <footer class="footer" id="footer">
-        <p>Footer</p>
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
