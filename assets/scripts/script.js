@@ -1,25 +1,5 @@
-function renderBookmarks(){
-    var bookmarkContainer = document.querySelector("#bookmark-list");
-    for (let i = 0; i < charities.length; i++) {
-        var bookmarkHeading = document.createElement("h2");
-        bookmarkHeading.textContent= charities[i].name;
-        var bookmarkWebsite = document.createElement("p");
-        bookmarkWebsite.textContent= charities[i].website;
-        var bookmarkAddress = document.createElement("p");
-        bookmarkAddress.textContent= charities[i].address;
-        var deleteBookmark= document.createElement("button");
-        deleteBookmark.textContent="X";
-        deleteBookmark.addEventListener("click", function(){
-            // charities.splice(charities[i]);
-            // charities.filter(function(i){
-            // })
-            // console.log("Fire");
-        charities.filter(item => item !== value) 
-        })
-        bookmarkContainer.append(bookmarkHeading, bookmarkWebsite, bookmarkAddress, deleteBookmark);
-    }
-} renderBookmarks();
-
+// BOOKMARK SAVES CURRENT SEARCH INTO ARRAY
+const charities = JSON.parse[window.localStorage.getItem("Bookmarks")] || [];
 var charityData;
 
 function queryApiData() {
@@ -27,6 +7,7 @@ function queryApiData() {
     fetch(url)
     .then(data=>{return data.json()})
     .then((res)=>{
+        console.log(res);
         charityData = res.result.records;
     });
 }
@@ -40,7 +21,6 @@ function filterApiData(stateFilter, causeFilter) {
     }
     return charityData.filter(arrayFilter);
 }
-
 
 function generateAddress(charity) {
 
@@ -71,23 +51,29 @@ function generateAddress(charity) {
 function resultBoxGenerator(filteredData) {
 
     var searchResults = document.getElementById("searchResults");
+    console.log("Filtered Data: ",filteredData);
+
     while (searchResults.firstChild) {
         searchResults.removeChild(searchResults.firstChild);
+    }
+
+    if (filteredData.length === 0) {
+        var noResultsDiv = document.createElement('div');
+        noResultsDiv.setAttribute("class", "charity-container"); 
+        var noResultsH3 = document.createElement('h3');
+        var noResultsText = document.createTextNode("We couldn't find any results for that search... Try again");
+        noResultsH3.appendChild(noResultsText);
+
+        noResultsDiv.appendChild(noResultsH3);
+        searchResults.appendChild(noResultsDiv);
+        return;
     }
 
     filteredData.forEach(charity => {
         //Create container for charity data
         var containerDiv = document.createElement('div');
         containerDiv.id = "charity"+charity._id;
-        containerDiv.setAttribute("class", "charity-container");
-
-        // Bookmark
-        var bookmarkIcon = document.createElement("i");
-        bookmarkIcon.id= "bookmarkIcon"+charity._id;
-        bookmarkIcon.setAttribute("class","fas fa-bookmark bookmark-icon");
-
-        containerDiv.appendChild(bookmarkIcon);
- 
+        containerDiv.setAttribute("class", "charity-container"); 
 
         //Charity name
         var nameHeader = document.createElement('h3');
@@ -133,25 +119,39 @@ function resultBoxGenerator(filteredData) {
             mapButton.href = getMapData(appendedAddress);
             containerDiv.appendChild(mapButton);
         }
-        containerDiv.appendChild(addressAnchor);
-        containerDiv.classList.add("searchResults")
         
-        // Alternate Bookmark Button
+        // Bookmark Button
         var bookmarkButton = document.createElement("button");
         var bookmarkText = document.createTextNode("Bookmark");
         bookmarkButton.id = "bookmarkButton"+charity._id;
         bookmarkButton.setAttribute("class", "bookmark-button");
         bookmarkButton.setAttribute("type","button");
-        
-
         containerDiv.appendChild(bookmarkButton);
-        bookmarkButton.appendChild(bookmarkText);
+        bookmarkButton.appendChild(bookmarkText);          
 
+        // BOOKMARKING TO ARRAY
+        bookmarkButton.addEventListener("click", function(){
+            
+            var cName = charity.Charity_Legal_Name;
+            var cWebsite = charity.Charity_Website;
+            var cAddress = appendedAddress;
 
+            charities.push({ name: cName, website: cWebsite, address: cAddress});
+
+            console.log(charities);
+            localStorage.setItem("Bookmarks", JSON.stringify(charities));
+
+            const bookmarkFeedback = document.createElement("p");
+            bookmarkFeedback.textContent= cName+" bookmarked!";
+            bookmarkFeedback.setAttribute("class", "bookmarkFeedback");
+            bookmarkButton.setAttribute("class","hide");
+            containerDiv.appendChild(bookmarkFeedback);
+                    
+            containerDiv.appendChild(bookmarkIcon);
+
+        });
         // Attach charity to body
-        
         searchResults.appendChild(containerDiv);
-        
     });
 }
 
@@ -187,12 +187,9 @@ function getMapData(address){
 
 document.getElementById("searchBtn").addEventListener("click", function() {
 
-    console.log(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
-
     resultBoxGenerator(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
 
 });
-
 
 var charityFacts = [{
     fact: "Charities have three primary income sources – government, giving and other income/revenue (which includes income from memberships, sales and investments). Around 1 in 4 charities depend on giving and philanthropy for 50% or more of their total revenue. Smaller charities tend to depend on giving and philanthropy for a higher proportion of their income compared to larger charities."
@@ -205,7 +202,6 @@ var charityFacts = [{
 },
 ]
 var factBox = document.querySelector(".card-text")
-
 
 function onLoadFact(){
     factBox.innerHTML = charityFacts[0].fact
@@ -230,6 +226,3 @@ $('.repeat').click(function(){
         $(indicator).parent().addClass(classes);
         }, 20);
     });
-
-    
-
