@@ -189,6 +189,7 @@ body{
 
 .card-text{
   font-size: 15px;
+  margin: 20px;
 }
 
 .repeat:hover{
@@ -334,7 +335,9 @@ body{
 
 footer{
   display: block;
+  padding: 20px;
   margin-top: 50px;
+  text-align: center;
 }
 
 
@@ -372,7 +375,6 @@ footer{
     border-radius: 5px;
     box-shadow: 3px 4px 4px #e2d7d7;
     background: white;
-  
   }
 
   .bookmark-icon{
