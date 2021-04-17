@@ -257,4 +257,4 @@ function textChange(){
         factBox.innerHTML = charityFacts[0].fact
     }
 
-
+}
