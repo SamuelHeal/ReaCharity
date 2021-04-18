@@ -70,6 +70,15 @@ footer {
     font-size: 10px;
 }
 
+.contactUs li {
+  display: inline-block;
+  text-align: right;
+}
+
+footer a {
+  color: gray;
+}
+
 @media screen and (max-width: 1200px) {
   .bookmarkContainer {
     display: block;
