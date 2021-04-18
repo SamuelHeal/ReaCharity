@@ -226,13 +226,13 @@ document.getElementById("searchBtn").addEventListener("click", function() {
 
 
 var charityFacts = [{
-    fact: "Charities have three primary income sources – government, giving and other income/revenue (which includes income from memberships, sales and investments). Around 1 in 4 charities depend on giving and philanthropy for 50% or more of their total revenue. Smaller charities tend to depend on giving and philanthropy for a higher proportion of their income compared to larger charities."
+    fact: "Charities in Australia have three primary sources of income. The first is the government, the second is donations and then then third is revenue from anything else; memberships, sales and investments to name a few. Around a quarter of all charities depend on donations and philanthropy for above half of their total revenue. Smaller charities tend to depend on donations more than larger charities."
 },
 {
-    fact: "The most recent comprehensive study into overall giving behaviours was undertaken in 2016. An estimated 14.9 million Australian adults (80.8%) gave in total $12.5 billion to charities and NFP organisations over the 2015-16 financial year. The average donation was $764.08 and the median donation was $200."
+    fact: "During the 2015-16 financial year, an 80.8% of all Australian adults had donated to charity, giving a total of around $12.5 billion to charities and Not-For-Profit organisations. The average donation was $764.08 and the median donation was $200."
 },
 {
-    fact: "For the 8th year running police were the most generous occupation, with 73.42% of individuals giving, followed by Machine Operators and School Principals. The highest average deductions were claimed by CEOs and Managing Directors, followed by Barristers and medical practitioners. (As of 2016-17 data)"
+    fact: "As of 2016-17, police had been the most generous occupation for 8 years in a row, with a little over 73% of individuals donating. This is followed by Machine Operators and School Principals, giving the 2nd and 3rd most respectively. Highest average deductions were made by CEOs and Managing Directors."
 },
 ]
 var factBox = document.querySelector(".card-text")
@@ -258,3 +258,33 @@ function textChange(){
     }
 
 }
+
+var searchButton = document.querySelector(".searchButton")
+
+searchButton.addEventListener("click", function(){
+    setTimeout(function(){
+        window.scrollTo({
+            top: 1000,
+            behavior: "smooth"
+        });
+    },200)
+
+})
+
+var resultsSearchBtn = document.querySelector("#searchBtn")
+var theResults = document.querySelector("#charityResults")
+
+resultsSearchBtn.addEventListener("click", function(){
+    theResults.style.display = "block"
+    setTimeout(function(){
+        window.scrollTo({
+            top: 1400,
+            behavior: "smooth"
+        });
+    },500)
+
+})
+
+
+
+

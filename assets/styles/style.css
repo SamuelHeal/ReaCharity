@@ -134,6 +134,10 @@ body{
   top: -30px
 }
 
+.reference{
+  font-size: 8px;
+}
+
 .searchBtn{
   margin-bottom: 5px;
 }
@@ -148,6 +152,10 @@ body{
 }
 
 /* SEARCH RESULTS */
+
+.hiding{
+  display: none;
+}
 
 #searchResults h3{
   font-size: 1.5rem;
