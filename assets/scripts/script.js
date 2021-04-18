@@ -1,13 +1,15 @@
 // BOOKMARK SAVES CURRENT SEARCH INTO ARRAY
-const charities = JSON.parse[window.localStorage.getItem("Bookmarks")] || [];
+const charities = JSON.parse(localStorage.getItem("Bookmarks")) || [];
+const charName = JSON.parse(localStorage.getItem("charBookmarks")) || [];
 var charityData;
+
 
 function queryApiData() {
     var url = "https://data.gov.au/data/api/3/action/datastore_search?resource_id=eb1e6be4-5b13-4feb-b28e-388bf7c26f93";
     fetch(url)
     .then(data=>{return data.json()})
     .then((res)=>{
-        console.log(res);
+        // console.log(res);
         charityData = res.result.records;
     });
 }
@@ -21,6 +23,7 @@ function filterApiData(stateFilter, causeFilter) {
     }
     return charityData.filter(arrayFilter);
 }
+
 
 function generateAddress(charity) {
 
@@ -121,37 +124,64 @@ function resultBoxGenerator(filteredData) {
         }
         
         // Bookmark Button
-        var bookmarkButton = document.createElement("button");
-        var bookmarkText = document.createTextNode("Bookmark");
-        bookmarkButton.id = "bookmarkButton"+charity._id;
-        bookmarkButton.setAttribute("class", "bookmark-button");
-        bookmarkButton.setAttribute("type","button");
-        containerDiv.appendChild(bookmarkButton);
-        bookmarkButton.appendChild(bookmarkText);          
 
-        // BOOKMARKING TO ARRAY
-        bookmarkButton.addEventListener("click", function(){
-            
-            var cName = charity.Charity_Legal_Name;
-            var cWebsite = charity.Charity_Website;
-            var cAddress = appendedAddress;
+            var bookmarkButton = document.createElement("button");
+            var bookmarkText = document.createTextNode("Bookmark");
+            bookmarkButton.id = "bookmarkButton"+charity._id;
+            bookmarkButton.setAttribute("class", "bookmark-button");
+            bookmarkButton.setAttribute("type","button");
+            containerDiv.appendChild(bookmarkButton);
+            bookmarkButton.appendChild(bookmarkText);          
 
-            charities.push({ name: cName, website: cWebsite, address: cAddress});
+            // BOOKMARKING TO ARRAY
+            bookmarkButton.addEventListener("click", function(){
+               
+                var cName = charity.Charity_Legal_Name;
+                var cWebsite = charity.Charity_Website;
+                var cAddress = appendedAddress;
 
-            console.log(charities);
-            localStorage.setItem("Bookmarks", JSON.stringify(charities));
+                charities.push({ name: cName, website: cWebsite, address: cAddress});
+                charName.push(cName);
 
-            const bookmarkFeedback = document.createElement("p");
-            bookmarkFeedback.textContent= cName+" bookmarked!";
-            bookmarkFeedback.setAttribute("class", "bookmarkFeedback");
-            bookmarkButton.setAttribute("class","hide");
-            containerDiv.appendChild(bookmarkFeedback);
-                    
-            containerDiv.appendChild(bookmarkIcon);
+            // UNIQUE VALUES FOR ARRAY
+                
+                const map = {};
+                const uniqueCharities = [];
 
-        });
+                charities.forEach(el => {
+                    if(!map[JSON.stringify(el)]){
+                       map[JSON.stringify(el)] = true;
+                       uniqueCharities.push(el);
+                 }
+              });
+
+                const getUniqueCharName = (array) => ([...new Set(array)]);
+                const uniqueCharName = getUniqueCharName(charName);
+
+                localStorage.setItem("Bookmarks", JSON.stringify(uniqueCharities));
+                localStorage.setItem("charBookmarks", JSON.stringify(uniqueCharName));
+
+                const bookmarkFeedback = document.createElement("p");
+                bookmarkFeedback.textContent= cName+" bookmarked!";
+                bookmarkFeedback.setAttribute("class", "bookmarkFeedback");
+                bookmarkButton.setAttribute("class","hide");
+                containerDiv.appendChild(bookmarkFeedback);
+
+                //   // Bookmark
+                //   var bookmarkIcon = document.createElement("i");
+                //   bookmarkIcon.id= "bookmarkIcon"+charity._id;
+                //   bookmarkIcon.setAttribute("class","fas fa-bookmark bookmark-icon");
+                        
+                //   containerDiv.appendChild(bookmarkIcon);
+
+            });
+
+      
         // Attach charity to body
         searchResults.appendChild(containerDiv);
+
+       
+
     });
 }
 
@@ -187,9 +217,13 @@ function getMapData(address){
 
 document.getElementById("searchBtn").addEventListener("click", function() {
 
+    console.log(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
+
     resultBoxGenerator(filterApiData(document.getElementById("stateDropdown").value, document.getElementById("causeDropdown").value));
 
 });
+
+
 
 var charityFacts = [{
     fact: "Charities have three primary income sources – government, giving and other income/revenue (which includes income from memberships, sales and investments). Around 1 in 4 charities depend on giving and philanthropy for 50% or more of their total revenue. Smaller charities tend to depend on giving and philanthropy for a higher proportion of their income compared to larger charities."
@@ -203,13 +237,16 @@ var charityFacts = [{
 ]
 var factBox = document.querySelector(".card-text")
 
+
 function onLoadFact(){
     factBox.innerHTML = charityFacts[0].fact
 }
 
 onLoadFact()
 
-$('.repeat').click(function(){
+var interval = setInterval(textChange, 10000)
+
+function textChange(){
     if (factBox.innerHTML === charityFacts[0].fact){
         factBox.innerHTML = charityFacts[1].fact
     }
@@ -219,10 +256,5 @@ $('.repeat').click(function(){
     else if (factBox.innerHTML === charityFacts[2].fact){
         factBox.innerHTML = charityFacts[0].fact
     }
-    var classes =  $(this).parent().attr('class');
-        $(this).parent().attr('class', 'animate');
-        var indicator = $(this);
-        setTimeout(function(){ 
-        $(indicator).parent().addClass(classes);
-        }, 20);
-    });
+
+}
