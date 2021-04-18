@@ -71,7 +71,7 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
-  .charity-container {
+  .bookmarkContainer {
     display: block;
     margin: 10px;
     min-width: 95%;
@@ -84,9 +84,7 @@ footer {
 }
 
 @media screen and (min-width: 1201px){
-
-    /* SEARCH RESULTS */
-    .charity-container {
+  .bookmarkContainer {
       display: block;
       margin: 10px;
       min-width: 48%;
