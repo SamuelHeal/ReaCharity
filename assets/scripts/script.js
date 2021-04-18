@@ -285,6 +285,20 @@ resultsSearchBtn.addEventListener("click", function(){
 
 })
 
+mybutton = document.getElementById("backToTop");
 
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
 
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+        $("#backToTop").slideDown('fast');
+    } else {
+        $("#backToTop").slideUp('fast');
+    }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+} 
