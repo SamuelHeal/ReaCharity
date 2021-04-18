@@ -2,6 +2,10 @@ body {
   background-color: #fffafa;
 }
 
+nav {
+  font-size: 20px;
+}
+
 /* SLIDESHOW */
 #slideshow {
     margin-bottom: 50px;
@@ -386,7 +390,6 @@ footer {
     border-radius: 5px;
     box-shadow: 3px 4px 4px #e2d7d7;
     background: white;
-  
   }
   
   .open-maps:link {

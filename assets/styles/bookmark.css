@@ -1,26 +1,25 @@
 body {
     background-color: #fffafa;
-  }
+}
 
-.bookmarkContainer {
-    border-style: solid;
-    border-radius: 3px;
-    margin: 15px;
-  }
+nav {
+  font-size: 20px;
+}
+
 
 .bookmarkContainer {
     margin: 10px 20px;
-    width: 40%;
+    width: 100%;
     border: 1px #fff solid;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 3px 4px 4px #e2d7d7;
     background: white;
-  }
+}
 
 .bookmarkContainer h2 {
     font-size: 1.5rem;
-  }
+}
 
 .addPadding {
   padding: 4px;
@@ -39,7 +38,7 @@ body {
     border-radius: 10px;
     color: white;
     text-decoration: none;
-  }
+}
 
 button:hover {
     display: inline-block;
@@ -60,18 +59,31 @@ footer {
     padding: 20px;
     margin-top: 50px;
     text-align: center;
-  }
+}
   
 .icon {
     max-height: 30px;
     max-width: 30px;
-  }
+}
 
 .ftrattr {
     font-size: 10px;
-  }
+}
 
-  @media screen and (min-width: 1201px){
+@media screen and (max-width: 1200px) {
+  .charity-container {
+    display: block;
+    margin: 10px;
+    min-width: 95%;
+    border: 1px #fff solid;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 4px #e2d7d7;
+    background: white;
+  }
+}
+
+@media screen and (min-width: 1201px){
 
     /* SEARCH RESULTS */
     .charity-container {
@@ -85,4 +97,4 @@ footer {
       box-shadow: 3px 4px 4px #e2d7d7;
       background: white;
     }
-  } 
+} 
