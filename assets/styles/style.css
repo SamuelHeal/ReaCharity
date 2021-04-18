@@ -131,7 +131,12 @@ nav {
   top: -30px
 }
 
-.searchBtn {
+
+.reference{
+  font-size: 8px;
+}
+
+.searchBtn{
   margin-bottom: 5px;
 }
 
@@ -147,7 +152,12 @@ nav {
 
 /* SEARCH RESULTS */
 
-#searchResults h3 {
+
+.hiding{
+  display: none;
+}
+
+#searchResults h3{
   font-size: 1.5rem;
 }
 
