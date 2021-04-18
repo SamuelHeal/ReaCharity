@@ -10,19 +10,24 @@ function renderBookmarks(){
 
         var bookmarkContainer = document.createElement("div");
         bookmarkContainer.id = "charityBookmark"+i;
+        bookmarkContainer.setAttribute("class", "card col-md-3 bookmarkContainer");
        
         var bookmarkHeading = document.createElement("h2");
+        bookmarkHeading.setAttribute("class", "card-title addPadding");
         bookmarkHeading.textContent= charities[i].name;
         
-        var bookmarkWebsite = document.createElement("p");
+        var bookmarkWebsite = document.createElement("a");
+        bookmarkWebsite.setAttribute("href", charities[i].website, "class", "addPadding");
         bookmarkWebsite.textContent= charities[i].website;
 
         var bookmarkAddress = document.createElement("p");
+        bookmarkAddress.setAttribute("class", "card-text addPadding")
         bookmarkAddress.textContent= charities[i].address;
        
 
         var deleteBookmark= document.createElement("button");
-        deleteBookmark.textContent="X";
+        deleteBookmark.setAttribute("class", "align-self-end");
+        deleteBookmark.textContent="Delete";
 
         deleteBookmark.addEventListener("click", function removeBookmark(){
         location.reload();

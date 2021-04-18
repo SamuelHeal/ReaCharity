@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #fffafa;
   }
 
@@ -8,7 +8,7 @@ body{
     margin: 15px;
   }
 
-  .bookmarkContainer {
+.bookmarkContainer {
     margin: 10px 20px;
     width: 40%;
     border: 1px #fff solid;
@@ -18,15 +18,20 @@ body{
     background: white;
   }
 
-  
-
-  .bookmarkContainer h2 {
+.bookmarkContainer h2 {
     font-size: 1.5rem;
   }
 
-  .bookmarkContainer button {
+.addPadding {
+  padding: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.bookmarkContainer button {
     display: inline-block;
     margin: 10px 0;
+    margin-top: 15px;
     margin-left: 10px;
     padding: 6px 10px;
     background-color: #ea4848;
@@ -36,7 +41,7 @@ body{
     text-decoration: none;
   }
 
-  button:hover {
+button:hover {
     display: inline-block;
     margin: 10px 0;
     margin-left: 10px;
@@ -50,14 +55,19 @@ body{
     transition-duration: .5s;
   }
 
-  footer {
+footer {
     display: block;
     padding: 20px;
     margin-top: 50px;
     text-align: center;
   }
+  
+.icon {
+    max-height: 30px;
+    max-width: 30px;
+  }
 
-  .ftrattr {
+.ftrattr {
     font-size: 10px;
   }
 

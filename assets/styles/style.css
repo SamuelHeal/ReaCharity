@@ -1,45 +1,43 @@
-body{
+body {
   background-color: #fffafa;
 }
 
 /* SLIDESHOW */
-#slideshow{
+#slideshow {
     margin-bottom: 50px;
 }
 
-#slideshow .bx-wrapper{
+#slideshow .bx-wrapper {
   border:none;
 
 }
 
 /*#SLIDESHOW + whatever element selector*/
 
-#slideshow{
+#slideshow {
   max-width: 1240px;
   margin: auto; 
 }
 
-#slideshow ul{
+#slideshow ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-#slideshow li{
+#slideshow li {
   position: relative;
   margin: 0;
   padding: 0;
   line-height: 0;
 }
 
-#slideshow img
-{
+#slideshow img {
   width: 100%;
 }
 
 /* PAGER */
-.bx-wrapper .bx-pager 
-{
+.bx-wrapper .bx-pager {
   text-align: center;
   font-size: .85em;
   font-family: Arial;
@@ -47,10 +45,9 @@ body{
   color: #666;
   top: -60px;
   position: relative;
- }
+}
 
-.bx-wrapper .bx-pager.bx-default-pager a 
-{
+.bx-wrapper .bx-pager.bx-default-pager a {
   background-color: #435aa9;
   text-indent: -9999px;
   display: block;
@@ -61,20 +58,17 @@ body{
   -webkit-border-radius: 5px;
   border-radius: 100%;
   border: 1px solid white;
-
 }
 
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active,
-.bx-wrapper .bx-pager.bx-default-pager a:focus 
-{
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
   background-color: #eb1d26;
   opacity: 0.6;
 }
 
 .bx-wrapper .bx-pager-item,
-.bx-wrapper .bx-controls-auto .bx-controls-auto-item 
-{
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
   display: inline-block;
   vertical-align: bottom;
   *zoom: 1;
@@ -82,31 +76,30 @@ body{
 
 }
 
-.bx-wrapper .bx-pager-item 
-{
+.bx-wrapper .bx-pager-item {
   font-size: 0;
   line-height: 0;
 }
 
 
-.beginSearch{
+.beginSearch {
   position: relative;
   top: 80px;
   
 }
 
-.card-location{
+.card-location {
   position:relative;
   
   top: -140px
 }
 
-.search-heading{
+.search-heading {
   position: relative;
   top: -50px
 }
 
-.searchButton{
+.searchButton {
   height:64px;
   font-size: 35px;
   background-color: rgb(41, 41, 41);
@@ -114,52 +107,52 @@ body{
   border: none
 }
 
-.searchResults{
+.searchResults {
   border-style: solid;
   border-radius: 3px;
   margin: 15px;
 }
 
-.background{
+.background {
   background-color: white;
 }
 
-.facts{
+.facts {
   position: relative;
   top: -30px
 }
 
-.factBox{
+.factBox {
   position: relative;
   top: -30px
 }
 
-.searchBtn{
+.searchBtn {
   margin-bottom: 5px;
 }
 
-.textHeading{
+.textHeading {
   font-weight: bold;
   font-size: 20px;
 }
 
-.card-text{
+.card-text {
   font-size: 15px;
   margin: 20px;
 }
 
 /* SEARCH RESULTS */
 
-#searchResults h3{
+#searchResults h3 {
   font-size: 1.5rem;
 }
 
-#searchResults a{
+#searchResults a {
   display: inline-block;
   margin: 10px 0;
 }
 
-.bookmark-icon{
+.bookmark-icon {
   position: relative;
   display: block;
   float: right;
@@ -168,7 +161,7 @@ body{
   color: #ea4848;
 }
 
-.bookmark-icon:visited{
+.bookmark-icon:visited {
   position: relative;
   display: block;
   float: right;
@@ -177,7 +170,7 @@ body{
   color: #ea4848;
 }
 
-.bookmark-icon:hover{
+.bookmark-icon:hover {
   position: relative;
   display: block;
   float: right;
@@ -189,7 +182,7 @@ body{
 }
 
 
-.charity-container{
+.charity-container {
   display: block;
   margin: 10px;
   min-width: 45%;
@@ -203,7 +196,7 @@ body{
 
 }
 
-.open-maps:link{
+.open-maps:link {
   display: inline-block;
   margin: 10px 0;
   padding: 6px 10px;
@@ -215,7 +208,7 @@ body{
 }
 
 
-.open-maps:visited{
+.open-maps:visited {
   display: inline-block;
   margin: 10px 0;
   padding: 6px 10px;
@@ -226,7 +219,7 @@ body{
   text-decoration: none;
 }
 
-.open-maps:hover{
+.open-maps:hover {
   display: inline-block;
   margin: 10px 0;
   padding: 6px 10px;
@@ -240,7 +233,7 @@ body{
 
 /* ALTERNATE BOOKMARK BUTTON */
 
-.bookmark-button{
+.bookmark-button {
   display: inline-block;
   margin: 10px 0;
   margin-left: 10px;
@@ -252,7 +245,7 @@ body{
   text-decoration: none;
 }
 
-.bookmark-button:hover{
+.bookmark-button:hover {
   display: inline-block;
   margin: 10px 0;
   margin-left: 10px;
@@ -266,11 +259,11 @@ body{
   transition-duration: .5s;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-.bookmarkFeedback{
+.bookmarkFeedback {
   font-size: 0.9em;
   color: #ea4848;
   position: relative;
@@ -283,7 +276,7 @@ body{
 
 /* FOOTER */
 
-footer{
+footer {
   display: block;
   padding: 20px;
   margin-top: 50px;
@@ -306,6 +299,15 @@ footer{
   font-size: 18px;
 }
 
+.icon {
+  max-height: 30px;
+  max-width: 30px;
+}
+
+.ftrattr {
+  font-size: 10px;
+}
+
 #backToTop:hover {
   background-color: #555;
 }
@@ -313,8 +315,7 @@ footer{
 @media screen and (max-width: 1200px){
 
   /* SEARCH RESULTS */
-  .bx-wrapper .bx-pager 
-  {
+  .bx-wrapper .bx-pager {
     text-align: center;
     font-size: .85em;
     font-family: Arial;
@@ -324,11 +325,11 @@ footer{
     position: relative;
    }
 
-  #searchResults h3{
+  #searchResults h3 {
     font-size: 1.5rem;
   }
   
-  #searchResults a{
+  #searchResults a {
     display: inline-block;
     margin: 10px 0;
     font-size: 0.9rem;
@@ -336,7 +337,7 @@ footer{
   }
   
 
-  .charity-container{
+  .charity-container {
     margin: 10px auto;
     width: 100%;
     border: 1px #fff solid;
@@ -346,7 +347,7 @@ footer{
     background: white;
   }
 
-  .bookmark-icon{
+  .bookmark-icon {
     position: relative;
     display: block;
     float: right;
@@ -355,7 +356,7 @@ footer{
     color: #ea4848;
   }
   
-  .bookmark-icon:visited{
+  .bookmark-icon:visited {
     position: relative;
     display: block;
     float: right;
@@ -364,7 +365,7 @@ footer{
     color: #ea4848;
   }
   
-  .bookmark-icon:hover{
+  .bookmark-icon:hover {
     position: relative;
     display: block;
     float: right;
@@ -376,7 +377,7 @@ footer{
   }
   
   
-  .charity-container{
+  .charity-container {
     display: block;
     margin: 10px;
     min-width: 95%;
@@ -388,7 +389,7 @@ footer{
   
   }
   
-  .open-maps:link{
+  .open-maps:link {
     display: inline-block;
     margin: 10px 0;
     padding: 6px 10px;
@@ -400,7 +401,7 @@ footer{
   }
   
   
-  .open-maps:visited{
+  .open-maps:visited {
     display: inline-block;
     margin: 10px 0;
     padding: 6px 10px;
@@ -411,7 +412,7 @@ footer{
     text-decoration: none;
   }
   
-  .open-maps:hover{
+  .open-maps:hover {
     display: inline-block;
     margin: 10px 0;
     padding: 6px 10px;
@@ -425,7 +426,7 @@ footer{
 
   /* ALTERNATE BOOKMARK BUTTON */
 
-  .bookmark-button{
+  .bookmark-button {
     display: inline-block;
     margin: 10px 0;
     margin-left: 10px;
@@ -437,7 +438,7 @@ footer{
     text-decoration: none;
   }
 
-  .bookmark-button:hover{
+  .bookmark-button:hover {
     display: inline-block;
     margin: 10px 0;
     margin-left: 10px;
@@ -456,7 +457,7 @@ footer{
 @media screen and (min-width: 1201px){
 
   /* SEARCH RESULTS */
-  .charity-container{
+  .charity-container {
     display: block;
     margin: 10px;
     min-width: 48%;
