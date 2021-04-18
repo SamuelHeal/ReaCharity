@@ -1,0 +1,98 @@
+body {
+    background-color: #fffafa;
+}
+
+nav {
+  font-size: 20px;
+}
+
+
+.bookmarkContainer {
+    margin: 10px 20px;
+    width: 100%;
+    border: 1px #fff solid;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 4px #e2d7d7;
+    background: white;
+}
+
+.bookmarkContainer h2 {
+    font-size: 1.5rem;
+}
+
+.addPadding {
+  padding: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.bookmarkContainer button {
+    display: inline-block;
+    margin: 10px 0;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding: 6px 10px;
+    background-color: #ea4848;
+    border: 1px #ea4848 solid;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+button:hover {
+    display: inline-block;
+    margin: 10px 0;
+    margin-left: 10px;
+    padding: 6px 10px;
+    background-color: #435aa9;
+    border: 1px #435aa9 solid;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+    transition-duration: .5s;
+  }
+
+footer {
+    display: block;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+  
+.icon {
+    max-height: 30px;
+    max-width: 30px;
+}
+
+.ftrattr {
+    font-size: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .bookmarkContainer {
+    display: block;
+    margin: 10px;
+    min-width: 95%;
+    border: 1px #fff solid;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 4px 4px #e2d7d7;
+    background: white;
+  }
+}
+
+@media screen and (min-width: 1201px){
+  .bookmarkContainer {
+      display: block;
+      margin: 10px;
+      min-width: 48%;
+      width: 48%;
+      border: 1px #fff solid;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 3px 4px 4px #e2d7d7;
+      background: white;
+    }
+} 

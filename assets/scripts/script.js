@@ -126,7 +126,7 @@ function resultBoxGenerator(filteredData) {
         // Bookmark Button
 
             var bookmarkButton = document.createElement("button");
-            var bookmarkText = document.createTextNode("Bookmark");
+            var bookmarkText = document.createTextNode("Save");
             bookmarkButton.id = "bookmarkButton"+charity._id;
             bookmarkButton.setAttribute("class", "bookmark-button");
             bookmarkButton.setAttribute("type","button");
