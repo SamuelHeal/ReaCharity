@@ -57,6 +57,10 @@ body{
     text-align: center;
   }
 
+  .ftrattr {
+    font-size: 10px;
+  }
+
   @media screen and (min-width: 1201px){
 
     /* SEARCH RESULTS */
